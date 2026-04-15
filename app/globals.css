@@ -2,7 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1b241e;
+  --surface: #f6f1e8;
+  --surface-strong: #efe7d8;
+  --accent: #427a5b;
+  --accent-dark: #2f5c44;
+  --accent-soft: #e6efe9;
+  --gold: #b99657;
 }
 
 @theme inline {
@@ -23,4 +29,93 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at top left, rgba(239, 231, 216, 0.45), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(230, 239, 233, 0.4), transparent 26%);
+}
+
+@keyframes drawerSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cta-primary {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.cta-primary:hover {
+  background: var(--accent-dark);
+}
+
+.cta-secondary {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid #e8dfcf;
+  background: var(--surface);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2a342d;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.cta-secondary:hover {
+  border-color: color-mix(in srgb, var(--accent) 25%, #e8dfcf);
+  background: var(--surface-strong);
+  color: var(--accent-dark);
+}
+
+.cta-whatsapp {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: #25d366;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  transition: background-color 180ms ease;
+}
+
+.cta-whatsapp:hover {
+  background: #1fb658;
+}
+
+a,
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
 const services = [
   {
     title: "Cilt Bakımı",
-    image: "/services-skin-care.jpg",
+    image: "/cilt.png",
     description:
       "Profesyonel cilt bakımı ve tedavileri ile cildinizi gençleştirin. Kişiye özel tedavi programları.",
     bullets: [
@@ -13,7 +13,7 @@ const services = [
   },
   {
     title: "Lazer Epilasyon",
-    image: "/services-laser-epilation.jpg",
+    image: "/epilasyon.png",
     description:
       "Son teknoloji lazer cihazları ile ağrısız ve kalıcı epilasyon. Tüm bölgeler için uygun.",
     bullets: [
@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: "Bölgesel İncelme",
-    image: "/services-body-shaping.jpg",
+    image: "/incelme.png",
     description:
       "Bölgesel yağ yakımı ve vücut şekillendirme ile istediğiniz forma kavuşun.",
     bullets: [
@@ -37,7 +37,7 @@ const services = [
   },
   {
     title: "Medikal Estetik",
-    image: "/services-medical-aesthetic.jpg",
+    image: "/medikal_estetik.png",
     description:
       "Botoks, dolgu ve mezoterapi gibi medikal estetik uygulamalarla doğal güzelliğinizi ortaya çıkarın.",
     bullets: [
@@ -51,7 +51,7 @@ const services = [
 
 export default function HizmetlerimizPage() {
   return (
-    <section className="mx-auto max-w-6xl space-y-10 px-6 py-12 md:py-20">
+    <section className="mx-auto max-w-6xl space-y-10 px-6 pt-12 pb-84 md:py-20">
       <div className="space-y-3 text-center">
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
           Hizmetlerimiz
@@ -65,7 +65,7 @@ export default function HizmetlerimizPage() {
         {services.map((service) => (
           <article
             key={service.title}
-            className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200"
+            className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_18px_38px_rgba(0,0,0,0.06)] ring-1 ring-[#ece5d8]"
           >
             <div
               className="h-52 w-full bg-cover bg-center"
@@ -89,14 +89,18 @@ export default function HizmetlerimizPage() {
                 ))}
               </ul>
 
-              <button className="mt-2 inline-flex items-center justify-between rounded-full border border-neutral-200 bg-neutral-50 px-5 py-3 text-xs font-medium text-neutral-800 transition-colors hover:bg-neutral-100">
-                <span>Fiyat için iletişime geçin Bilgi Al</span>
-                <span className="text-xs">→</span>
-              </button>
+              <a
+                href={`https://wa.me/905013672935?text=${encodeURIComponent(`Merhaba, ${service.title} hakkında bilgi almak istiyorum.`)}`}
+                className="cta-primary mt-2 w-full rounded-xl"
+              >
+                Fiyat için İletişime Geçin
+              </a>
             </div>
           </article>
         ))}
       </div>
+
+      <div className="h-8 md:hidden" />
     </section>
   );
 }
